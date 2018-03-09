@@ -29,11 +29,7 @@ conan_basic_setup()''')
 
     def package(self):
         self.copy("*.h", dst="include", src="dmp-stl")
-        self.copy("*diff_match_patch.lib", dst="lib", keep_path=False)
-        self.copy("*.dll", dst="bin", keep_path=False)
-        self.copy("*.so", dst="lib", keep_path=False)
-        self.copy("*.dylib", dst="lib", keep_path=False)
-        self.copy("*.a", dst="lib", keep_path=False)
 
-    def package_info(self):
-        self.cpp_info.libs = ["dmp-stl"]
+    def package_id(self):
+        self.info.header_only()
+
